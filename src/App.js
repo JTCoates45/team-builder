@@ -1,11 +1,11 @@
-import './App.css';
+
 
 import React, {useState} from 'react';
 import Form from './Components/Form';
 
 function App() {
-  const [members, setMembers] = useState({})
-  const[values, setValues] = useState({name: '', email: '', role: ''});
+  const [members, setMembers] = useState([])
+  const [values, setValues] = useState({name: '', email: '', role: ''});
 
   const onSubmit = () => {
     setMembers([values, ...members])
@@ -23,7 +23,7 @@ function App() {
       <Form
         values={values}
         change={onChange}
-        submit={onsubmit}
+        submit={onSubmit}
         />
         {members.map((member, idx) => {
           return(
